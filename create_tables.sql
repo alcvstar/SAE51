@@ -31,3 +31,4 @@ CREATE TABLE IF NOT EXISTS hardware (
 );
 
 -- ensuite, on crée un deuxième fichier sql qui permettra d'insérer des données dans la bdd, grâce à des fichiers csv
+
