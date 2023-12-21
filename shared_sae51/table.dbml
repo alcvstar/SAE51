@@ -1,0 +1,23 @@
+// Base de données: sae51_bdd
+
+Table hardware {
+  id_pc int [pk] // clé primaire
+  marque varchar
+  os varchar
+  date_achat date
+  id_user int [ref: > users.id_user] // clé étrangère liée à la table users
+  id_maintenance int [ref: > maintenance.id_maintenance] // clé étrangère liée à la table maintenance
+}
+
+Table users {
+  id_user int [pk] // clé primaire
+  nom varchar
+  prenom varchar
+  poste varchar
+}
+
+Table maintenance {
+  id_maintenance int [pk] // clé primaire
+  date_maintenance date
+  id_user int [ref: > users.id_user] // clé étrangère liée à la table users
+}

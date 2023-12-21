@@ -1,14 +1,26 @@
-# on base le conteneur sur une image MySQL
-FROM mysql:latest
+# Utilisation d'Ubuntu 22.04 comme image de base
+FROM ubuntu:22.04
 
-# on configure MySQL
-ENV MYSQL_ROOT_PASSWORD=root
-ENV MYSQL_DATABASE=sae51_bdd
-ENV MYSQL_USER=user
-ENV MYSQL_PASSWORD=user
+# Mise à jour des paquets et installation des dépendances nécessaires
+RUN apt-get update && apt-get install -y \
+    nodejs \
+    npm \
+    mysql-server \
+    && rm -rf /var/lib/apt/lists/*
 
-# on copie le script de création de la bdd
-COPY create_tables.sql /docker-entrypoint-initdb.d/
+# Installation de dbml-cli et dbml-renderer via npm
+RUN npm install -g @dbml/cli
+RUN npm install -g @softwaretechnik/dbml-renderer
 
-# on expose le port MySQL
-EXPOSE 3306
+# Définition du dossier de travail
+WORKDIR /shared_sae51
+
+# Copie du script d'entrée
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
+# Utilisation du script d'entrée comme point d'entrée
+ENTRYPOINT ["/entrypoint.sh"]
+
+# Exécution de MySQL comme processus principal
+CMD ["mysqld", "--local-infile=1"]
