@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# Définition du mot de passe MySQL
 MYSQL_PASSWORD="foo"
 
 # Parcours de tous les fichiers .dbml dans le dossier /shared_sae51
