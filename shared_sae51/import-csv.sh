@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Définition du mot de passe MySQL
-MYSQL_PASSWORD="foo" # Remplacez par votre mot de passe MySQL
+MYSQL_PASSWORD="foo"
 
 # Vérification de l'existence du dossier CSV
 if [ ! -d "/shared_sae51/csv" ]; then
