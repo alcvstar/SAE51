@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Définition du mot de passe MySQL (assurez-vous qu'il correspond à votre configuration Docker)
+# Définition du mot de passe MySQL
 MYSQL_PASSWORD="foo"
 
 # Création de la base de données "sae51_bdd" si elle n'existe pas
