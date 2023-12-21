@@ -1,4 +1,4 @@
-# Dépot archivant l'ensemble des travaux réalisés dansle cadre de la sae51
+# Dépot archivant l'ensemble des travaux réalisés dans le cadre de la sae51
 
 ### Mise en place du conteneur
 
