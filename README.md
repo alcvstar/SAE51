@@ -4,19 +4,19 @@
 
 On construit d'abord le conteneur
 
-```bash
+```docker
 docker build -t sae51_image .
 ```
 
 Ensuite, on le lance en précisant le chemin absolu du dossier shared_sae51, qui contient les fichiers qui seront importés dans le conteneur (il s'agit en fait de notre WORKDIR).
 
-```bash
+```docker
 docker run -it -v chemin-absolu\shared_sae51:/shared_sae51 sae51_image
 ```
 
 On récupère le nom du conteneur et on accède à celui-ci.
 
-```bash
+```docker
 docker ps
 docker exec -it nom-du-conteneur bash
 ```
